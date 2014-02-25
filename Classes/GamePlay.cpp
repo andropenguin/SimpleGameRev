@@ -10,6 +10,7 @@
 #include "GameOver.h"
 #include "SimpleAudioEngine.h"
 #include "Score.h"
+#include "Result.h"
 
 using namespace cocos2d;
 
@@ -154,8 +155,10 @@ bool GamePlayLayer::init()
 
 void GamePlayLayer::menuCloseCallback(CCObject* pSender)
 {
-	// "close" menu item clicked
-	CCDirector::sharedDirector()->end();
+//	// "close" menu item clicked
+//	CCDirector::sharedDirector()->end();
+    ResultScene* resultScene = ResultScene::create();
+    CCDirector::sharedDirector()->replaceScene(resultScene);
 }
 
 // cpp with cocos2d-x
