@@ -7,6 +7,7 @@
 //
 
 #include "GameEntry.h"
+#include "GamePlay.h"
 
 USING_NS_CC;
 
@@ -67,4 +68,7 @@ bool GameEntryLayer::init() {
 
 void GameEntryLayer::menuStartGameCallback(CCObject* pSender)
 {
+    GamePlayScene* gamePlaydScene = GamePlayScene::create();
+    CCDirector::sharedDirector()->replaceScene(gamePlaydScene);
+
 }
