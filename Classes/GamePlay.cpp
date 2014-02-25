@@ -9,6 +9,7 @@
 #include "GamePlay.h"
 #include "GameOver.h"
 #include "SimpleAudioEngine.h"
+#include "Score.h"
 
 using namespace cocos2d;
 
@@ -55,6 +56,8 @@ GamePlayLayer::GamePlayLayer()
 :_targets(NULL)
 ,_projectiles(NULL)
 ,_projectilesDestroyed(0)
+,_score(0)
+,_highScore(0)
 {
 }
 
@@ -83,6 +86,8 @@ CCScene* GamePlayLayer::scene()
 bool GamePlayLayer::init()
 {
 	bool bRet = false;
+    _highScore = Score::getHighScore();
+    
 	do
 	{
 		//////////////////////////////////////////////////////////////////////////
@@ -201,6 +206,14 @@ void GamePlayLayer::spriteMoveFinished(CCNode* sender)
 	{
 		_targets->removeObject(sprite);
         
+        if ( _projectilesDestroyed > _score) {
+            _score = _projectilesDestroyed;
+        }
+        Score::saveScore(_score);
+        if (_score > _highScore) {
+            Score::saveHighScore(_score);
+        }
+        
 		GameOverScene *gameOverScene = GameOverScene::create();
 		gameOverScene->getLayer()->getLabel()->setString("You Lose :[");
 		CCDirector::sharedDirector()->replaceScene(gameOverScene);
@@ -314,6 +327,14 @@ void GamePlayLayer::updateGame(float dt)
 			_projectilesDestroyed++;
 			if (_projectilesDestroyed >= 5)
 			{
+                if ( _projectilesDestroyed > _score) {
+                    _score = _projectilesDestroyed;
+                }
+                Score::saveScore(_score);
+                if (_score > _highScore) {
+                    Score::saveHighScore(_score);
+                }
+
 				GameOverScene *gameOverScene = GameOverScene::create();
 				gameOverScene->getLayer()->getLabel()->setString("You Win!");
 				CCDirector::sharedDirector()->replaceScene(gameOverScene);

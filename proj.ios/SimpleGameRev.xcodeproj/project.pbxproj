@@ -254,6 +254,7 @@
 		8CD73A4E18BC1BE5002D9D08 /* Player.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CD73A3E18BC1BE5002D9D08 /* Player.png */; };
 		8CD73A4F18BC1BE5002D9D08 /* Projectile.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CD73A3F18BC1BE5002D9D08 /* Projectile.png */; };
 		8CD73A5018BC1BE5002D9D08 /* Target.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CD73A4018BC1BE5002D9D08 /* Target.png */; };
+		8CD73A5F18BC61C7002D9D08 /* Score.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CD73A5D18BC61C7002D9D08 /* Score.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712461292920000B8313A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB212928DE900B8313A /* libxml2.dylib */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -771,6 +772,8 @@
 		8CD73A3E18BC1BE5002D9D08 /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player.png; sourceTree = "<group>"; };
 		8CD73A3F18BC1BE5002D9D08 /* Projectile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Projectile.png; sourceTree = "<group>"; };
 		8CD73A4018BC1BE5002D9D08 /* Target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Target.png; sourceTree = "<group>"; };
+		8CD73A5D18BC61C7002D9D08 /* Score.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Score.cpp; path = ../Classes/Score.cpp; sourceTree = "<group>"; };
+		8CD73A5E18BC61C7002D9D08 /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Score.h; path = ../Classes/Score.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB212928DE900B8313A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -1311,6 +1314,8 @@
 				8CD73A2618BC146E002D9D08 /* GamePlay.h */,
 				8CD73A2B18BC16AD002D9D08 /* GameOver.cpp */,
 				8CD73A2C18BC16AD002D9D08 /* GameOver.h */,
+				8CD73A5D18BC61C7002D9D08 /* Score.cpp */,
+				8CD73A5E18BC61C7002D9D08 /* Score.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -1967,6 +1972,7 @@
 				15A3D9261682F7D5002FB0C5 /* b2PulleyJoint.cpp in Sources */,
 				15A3D9271682F7D5002FB0C5 /* b2RevoluteJoint.cpp in Sources */,
 				15A3D9281682F7D5002FB0C5 /* b2RopeJoint.cpp in Sources */,
+				8CD73A5F18BC61C7002D9D08 /* Score.cpp in Sources */,
 				15A3D9291682F7D5002FB0C5 /* b2WeldJoint.cpp in Sources */,
 				15A3D92A1682F7D5002FB0C5 /* b2WheelJoint.cpp in Sources */,
 				15A3D9391682F7D5002FB0C5 /* b2Rope.cpp in Sources */,
