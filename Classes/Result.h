@@ -13,14 +13,12 @@
 
 class ResultLayer : public cocos2d::CCLayerColor {
 public:
-	ResultLayer(): _scoreLabel(NULL), _highScoreLabel(NULL) {};
+	ResultLayer() {};
 	virtual ~ResultLayer();
 	bool init();
 	CREATE_FUNC(ResultLayer);
 	static cocos2d::CCScene* scene();
 	virtual void menuBackCallback(cocos2d::CCObject* pSender);
-    CC_SYNTHESIZE_READONLY(cocos2d::CCLabelTTF*, _scoreLabel, scoreLabel);
-    CC_SYNTHESIZE_READONLY(cocos2d::CCLabelTTF*, _highScoreLabel, highScoreLabel);
 };
 
 class ResultScene : public cocos2d::CCScene {

@@ -7,6 +7,7 @@
 //
 
 #include "Result.h"
+#include "Score.h"
 
 USING_NS_CC;
 
@@ -45,6 +46,33 @@ CCScene* ResultLayer::scene() {
 bool ResultLayer::init() {
 	if ( CCLayerColor::initWithColor( ccc4(255, 255, 255, 255) ) ) {
         
+        CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
+        CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
+        
+        int score = Score::getScore();
+        int highScore = Score::getHighScore();
+//        CCLog("score = %d", score);
+//        CCLog("high score= %d", highScore);
+        CCString* scoreValue = CCString::createWithFormat("Score: %d", score);
+        CCString* highScoreValue = CCString::createWithFormat("High Score: %d", highScore);
+        
+//        CCLabelTTF* pScoreLabel = CCLabelTTF::create(scoreValue, "", 24.0);
+        CCLabelTTF* pScoreLabel = CCLabelTTF::create(scoreValue->getCString(), "arial", 48.0);
+        pScoreLabel->setColor(ccc3(255, 0, 127));
+        int widthScoreLabel =pScoreLabel->getContentSize().width;
+        CCLabelTTF* pHighScoreLabel = CCLabelTTF::create(highScoreValue->getCString(), "arial", 48.0);
+        pHighScoreLabel->setColor(ccc3(255, 0, 127));
+        int widthHighScoreLabel =pHighScoreLabel->getContentSize().width;
+        int heightHighScoreLabel = pHighScoreLabel->getContentSize().height;
+        pScoreLabel->setPosition(ccp(origin.x + visibleSize.width / 2 - widthScoreLabel / 2,
+                                     origin.y + (int)(visibleSize.height * (1.0 - 0.4))));
+        pHighScoreLabel->setPosition(ccp(origin.x + visibleSize.width / 2 - widthScoreLabel/ 2
+                                         + abs(widthHighScoreLabel - widthScoreLabel) / 2,
+                                         origin.y + (int)(visibleSize.height * (1.0 - 0.4))
+                                         - heightHighScoreLabel - 20));
+        
+        this->addChild(pScoreLabel, 1);
+        this->addChild(pHighScoreLabel, 1);
         
         
 		// 1. Add a menu item with "X" image, which is clicked to quit the program.
@@ -57,8 +85,8 @@ bool ResultLayer::init() {
                                                               menu_selector(ResultLayer::menuBackCallback));
         
 		// Place the menu item bottom-right conner.
-        CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
-        CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
+//        CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
+//        CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
         
 		pCloseItem->setPosition(ccp(origin.x + visibleSize.width - pCloseItem->getContentSize().width/2,
                                     origin.y + pCloseItem->getContentSize().height/2));
