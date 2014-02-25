@@ -11,16 +11,6 @@
 
 USING_NS_CC;
 
-//int Score::calculateHighScore(int score) {
-//    
-//    int prevHighScore = getHighScore();
-//    if (score > prevHighScore) {
-//        return score;
-//    } else {
-//        return prevHighScore;
-//    }
-//}
-
 void Score::saveScore(int score) {
     saveNumber(SCORE, score);
 }

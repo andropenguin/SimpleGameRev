@@ -16,7 +16,6 @@ public:
 #define SCORE "score"
 #define HIGH_SCORE "highScore"
     
-//    static int calculateHighScore(int score);
     static void saveScore(int score);
     static void saveHighScore(int score);
     static int getScore();
