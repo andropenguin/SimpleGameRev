@@ -8,6 +8,7 @@
 
 #include "Result.h"
 #include "Score.h"
+#include "GameEntry.h"
 
 USING_NS_CC;
 
@@ -106,6 +107,6 @@ bool ResultLayer::init() {
 
 void ResultLayer::menuBackCallback(CCObject* pSender)
 {
-	// "back" menu item clicked
-//	CCDirector::sharedDirector()->end();
+    GameEntryScene* gameEntryScene = GameEntryScene::create();
+    CCDirector::sharedDirector()->replaceScene(gameEntryScene);
 }
