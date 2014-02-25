@@ -9,6 +9,7 @@
 #include "Result.h"
 #include "Score.h"
 #include "GameEntry.h"
+#include "SimpleAudioEngine.h"
 
 USING_NS_CC;
 
@@ -107,6 +108,9 @@ bool ResultLayer::init() {
 
 void ResultLayer::menuBackCallback(CCObject* pSender)
 {
+    CocosDenshion::SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
+    CocosDenshion::SimpleAudioEngine::sharedEngine()->stopAllEffects();
+    
     GameEntryScene* gameEntryScene = GameEntryScene::create();
     CCDirector::sharedDirector()->replaceScene(gameEntryScene);
 }

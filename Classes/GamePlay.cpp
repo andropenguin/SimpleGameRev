@@ -157,6 +157,8 @@ void GamePlayLayer::menuCloseCallback(CCObject* pSender)
 {
 //	// "close" menu item clicked
 //	CCDirector::sharedDirector()->end();
+    Score::saveScore(_score);
+    Score::saveHighScore(_highScore);
     ResultScene* resultScene = ResultScene::create();
     CCDirector::sharedDirector()->replaceScene(resultScene);
 }
