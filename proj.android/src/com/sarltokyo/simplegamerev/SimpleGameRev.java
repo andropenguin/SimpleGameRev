@@ -1,5 +1,6 @@
 /****************************************************************************
-Copyright (c) 2010-2011 cocos2d-x.org
+C/****************************************************************************
+Copyright (c) 2010-2012 cocos2d-x.org
 
 http://www.cocos2d-x.org
 
@@ -24,25 +25,16 @@ THE SOFTWARE.
 package com.sarltokyo.simplegamerev;
 
 import org.cocos2dx.lib.Cocos2dxActivity;
-import org.cocos2dx.lib.Cocos2dxGLSurfaceView;
 
 import android.os.Bundle;
 
 public class SimpleGameRev extends Cocos2dxActivity{
-	
-    protected void onCreate(Bundle savedInstanceState){
-		super.onCreate(savedInstanceState);	
+
+	protected void onCreate(Bundle savedInstanceState){
+		super.onCreate(savedInstanceState);
 	}
-
-    public Cocos2dxGLSurfaceView onCreateView() {
-    	Cocos2dxGLSurfaceView glSurfaceView = new Cocos2dxGLSurfaceView(this);
-    	// SimpleGameRev should create stencil buffer
-    	glSurfaceView.setEGLConfigChooser(5, 6, 5, 0, 16, 8);
-    	
-    	return glSurfaceView;
-    }
-
+	
     static {
-        System.loadLibrary("cocos2dcpp");
-    }     
+        System.loadLibrary("game");
+    }
 }

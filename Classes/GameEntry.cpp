@@ -69,7 +69,7 @@ bool GameEntryLayer::init() {
 
 void GameEntryLayer::menuStartGameCallback(CCObject* pSender)
 {
-    // replace the scenss.
+    // replace the scenes.
     GamePlayScene* gamePlaydScene = GamePlayScene::create();
     CCDirector::sharedDirector()->replaceScene(gamePlaydScene);
 
