@@ -14,6 +14,9 @@
 
 using namespace cocos2d;
 
+int _score;
+int _highScore;
+
 bool GamePlayScene::init() {
     if ( CCScene::init() ) {
 		this->_layer = GamePlayLayer::create();
@@ -57,8 +60,6 @@ GamePlayLayer::GamePlayLayer()
 :_targets(NULL)
 ,_projectiles(NULL)
 ,_projectilesDestroyed(0)
-,_score(0)
-,_highScore(0)
 {
 }
 
@@ -87,6 +88,7 @@ CCScene* GamePlayLayer::scene()
 bool GamePlayLayer::init()
 {
 	bool bRet = false;
+    _score = Score::getScore();
     _highScore = Score::getHighScore();
     
 	do
@@ -216,6 +218,7 @@ void GamePlayLayer::spriteMoveFinished(CCNode* sender)
         }
         Score::saveScore(_score);
         if (_score > _highScore) {
+            _highScore = _score;
             Score::saveHighScore(_score);
         }
         
@@ -337,6 +340,7 @@ void GamePlayLayer::updateGame(float dt)
                 }
                 Score::saveScore(_score);
                 if (_score > _highScore) {
+                    _highScore = _score;
                     Score::saveHighScore(_score);
                 }
 

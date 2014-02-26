@@ -108,6 +108,8 @@ bool ResultLayer::init() {
 
 void ResultLayer::menuBackCallback(CCObject* pSender)
 {
+    // reset _score
+    Score::saveScore(0);
     CocosDenshion::SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
     CocosDenshion::SimpleAudioEngine::sharedEngine()->stopAllEffects();
     

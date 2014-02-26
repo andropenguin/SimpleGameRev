@@ -46,8 +46,6 @@ protected:
 	cocos2d::CCArray *_targets;
 	cocos2d::CCArray *_projectiles;
 	int _projectilesDestroyed;
-    int _score;
-    int _highScore;
     
 	void addTarget();
     
