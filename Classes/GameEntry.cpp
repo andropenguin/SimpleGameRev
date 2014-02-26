@@ -48,6 +48,7 @@ bool GameEntryLayer::init() {
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
     
+    // make the menu itemof start game.
     CCMenuItemImage *pStartGameItem = CCMenuItemImage::create(
                                                               "StartNormal.png",
                                                               "StartSelected.png",
@@ -68,6 +69,7 @@ bool GameEntryLayer::init() {
 
 void GameEntryLayer::menuStartGameCallback(CCObject* pSender)
 {
+    // replace the scenss.
     GamePlayScene* gamePlaydScene = GamePlayScene::create();
     CCDirector::sharedDirector()->replaceScene(gamePlaydScene);
 

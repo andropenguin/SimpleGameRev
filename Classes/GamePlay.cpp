@@ -14,6 +14,10 @@
 
 using namespace cocos2d;
 
+// global vriables.
+// These are alive only in this file.
+// This means that these variables are alive from tapping the start button
+// of the initial scene until tapping the close button.
 int _score;
 int _highScore;
 
@@ -88,6 +92,8 @@ CCScene* GamePlayLayer::scene()
 bool GamePlayLayer::init()
 {
 	bool bRet = false;
+    
+    // get _score and _highScore from the preference when starting this game.
     _score = Score::getScore();
     _highScore = Score::getHighScore();
     
@@ -157,10 +163,11 @@ bool GamePlayLayer::init()
 
 void GamePlayLayer::menuCloseCallback(CCObject* pSender)
 {
-//	// "close" menu item clicked
-//	CCDirector::sharedDirector()->end();
+    // save _score and _highScore when tapping the close button.
     Score::saveScore(_score);
     Score::saveHighScore(_highScore);
+    
+    // replace the scenes.
     ResultScene* resultScene = ResultScene::create();
     CCDirector::sharedDirector()->replaceScene(resultScene);
 }
@@ -214,10 +221,13 @@ void GamePlayLayer::spriteMoveFinished(CCNode* sender)
 		_targets->removeObject(sprite);
         
         if ( _projectilesDestroyed > _score) {
+            // The number of the deleted projectiles are beyond _score,
+            // so update _score.
             _score = _projectilesDestroyed;
         }
         Score::saveScore(_score);
         if (_score > _highScore) {
+            // _score is beyod _highScore, so update and save _highScore.
             _highScore = _score;
             Score::saveHighScore(_score);
         }
@@ -336,10 +346,13 @@ void GamePlayLayer::updateGame(float dt)
 			if (_projectilesDestroyed >= 5)
 			{
                 if ( _projectilesDestroyed > _score) {
+                    // The number of the deleted projectiles are beyond _score,
+                    // so update _score.
                     _score = _projectilesDestroyed;
                 }
                 Score::saveScore(_score);
                 if (_score > _highScore) {
+                    // _score is beyod _highScore, so update and save _highScore.
                     _highScore = _score;
                     Score::saveHighScore(_score);
                 }

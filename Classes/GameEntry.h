@@ -18,6 +18,8 @@ public:
     bool init();
     CREATE_FUNC(GameEntryLayer);
     static cocos2d::CCScene* scene();
+    
+    // callback function of sthe tart game button.
     void menuStartGameCallback(CCObject* pSender);
 };
 

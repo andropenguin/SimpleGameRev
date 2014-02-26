@@ -51,28 +51,33 @@ bool ResultLayer::init() {
         CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
         CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
         
+        // make the labels of the score and the high score and add them on the layer.
         int score = Score::getScore();
         int highScore = Score::getHighScore();
 //        CCLog("score = %d", score);
 //        CCLog("high score= %d", highScore);
         CCString* scoreValue = CCString::createWithFormat("Score: %d", score);
         CCString* highScoreValue = CCString::createWithFormat("High Score: %d", highScore);
-        
-//        CCLabelTTF* pScoreLabel = CCLabelTTF::create(scoreValue, "", 24.0);
+        // set font.
         CCLabelTTF* pScoreLabel = CCLabelTTF::create(scoreValue->getCString(), "arial", 48.0);
+        // set the font color
         pScoreLabel->setColor(ccc3(255, 0, 127));
         int widthScoreLabel =pScoreLabel->getContentSize().width;
+         // set font.
         CCLabelTTF* pHighScoreLabel = CCLabelTTF::create(highScoreValue->getCString(), "arial", 48.0);
+        // set the font color.
         pHighScoreLabel->setColor(ccc3(255, 0, 127));
+        // get the width and the height of the high score label.
         int widthHighScoreLabel =pHighScoreLabel->getContentSize().width;
         int heightHighScoreLabel = pHighScoreLabel->getContentSize().height;
+        // set the positions of the labels.
         pScoreLabel->setPosition(ccp(origin.x + visibleSize.width / 2 - widthScoreLabel / 2,
                                      origin.y + (int)(visibleSize.height * (1.0 - 0.4))));
         pHighScoreLabel->setPosition(ccp(origin.x + visibleSize.width / 2 - widthScoreLabel/ 2
                                          + abs(widthHighScoreLabel - widthScoreLabel) / 2,
                                          origin.y + (int)(visibleSize.height * (1.0 - 0.4))
                                          - heightHighScoreLabel - 20));
-        
+        // add the labels to the layer.
         this->addChild(pScoreLabel, 1);
         this->addChild(pHighScoreLabel, 1);
         
@@ -110,9 +115,11 @@ void ResultLayer::menuBackCallback(CCObject* pSender)
 {
     // reset _score
     Score::saveScore(0);
+    // stop the BGM and the sound effect.
     CocosDenshion::SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
     CocosDenshion::SimpleAudioEngine::sharedEngine()->stopAllEffects();
     
+    // create the scene and replace scens.
     GameEntryScene* gameEntryScene = GameEntryScene::create();
     CCDirector::sharedDirector()->replaceScene(gameEntryScene);
 }
