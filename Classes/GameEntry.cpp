@@ -48,6 +48,15 @@ bool GameEntryLayer::init() {
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
     
+    
+    CCSprite* pLargeImage = CCSprite::create("720x1080.png");
+    pLargeImage->setPosition(CCPoint(origin.x + pLargeImage->getContentSize().width / 2, pLargeImage->getContentSize().height / 2));
+    this->addChild(pLargeImage);
+    
+    CCSprite* pSmallImage = CCSprite::create("360x540.png");
+    pSmallImage->setPosition(ccp(origin.x + pSmallImage->getContentSize().width / 2, origin.y + pSmallImage->getContentSize().height / 2));
+    this->addChild(pSmallImage);
+    
     // make the menu itemof start game.
     CCMenuItemImage *pStartGameItem = CCMenuItemImage::create(
                                                               "StartNormal.png",

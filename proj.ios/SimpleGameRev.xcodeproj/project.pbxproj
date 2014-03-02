@@ -127,7 +127,7 @@
 		15A3DA5D1682F826002FB0C5 /* HttpClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15A3DA1B1682F826002FB0C5 /* HttpClient.cpp */; };
 		15A3DA5E1682F826002FB0C5 /* CCPhysicsDebugNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15A3DA201682F826002FB0C5 /* CCPhysicsDebugNode.cpp */; };
 		15A3DA5F1682F826002FB0C5 /* CCPhysicsSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15A3DA221682F826002FB0C5 /* CCPhysicsSprite.cpp */; };
-		15A3DA6A1682F886002FB0C5 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A3D8861682F7B3002FB0C5 /* libcocos2dx.a */; };
+		15A3DA6A1682F886002FB0C5 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A3D8861682F7B3002FB0C5 /* libcocos2dx.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		15A3DAEB1682F8A6002FB0C5 /* CDAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A3DA861682F8A6002FB0C5 /* CDAudioManager.m */; };
 		15A3DAEC1682F8A6002FB0C5 /* CDOpenALSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A3DA891682F8A6002FB0C5 /* CDOpenALSupport.m */; };
 		15A3DAED1682F8A6002FB0C5 /* CocosDenshion.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A3DA8B1682F8A6002FB0C5 /* CocosDenshion.m */; };
@@ -233,6 +233,8 @@
 		379BB9D317F03F3700829B88 /* CCSGUIReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 379BB99117F03F3700829B88 /* CCSGUIReader.cpp */; };
 		379BB9D417F03F3700829B88 /* CCSSceneReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 379BB99317F03F3700829B88 /* CCSSceneReader.cpp */; };
 		7855E0E1153FEF240059DD9A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7855E0DF153FEF240059DD9A /* Default.png */; };
+		8C3CE3C718C2E39F00F753BB /* 360x540.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3CE3C518C2E39F00F753BB /* 360x540.png */; };
+		8C3CE3C818C2E39F00F753BB /* 720x1080.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C3CE3C618C2E39F00F753BB /* 720x1080.png */; };
 		8C985C7518BC7EF900C99995 /* BackNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C985C7118BC7EF900C99995 /* BackNormal.png */; };
 		8C985C7618BC7EF900C99995 /* BackSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C985C7218BC7EF900C99995 /* BackSelected.png */; };
 		8C985C7718BC7EF900C99995 /* StartNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C985C7318BC7EF900C99995 /* StartNormal.png */; };
@@ -751,6 +753,8 @@
 		379BB99317F03F3700829B88 /* CCSSceneReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSSceneReader.cpp; sourceTree = "<group>"; };
 		379BB99417F03F3700829B88 /* CCSSceneReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSSceneReader.h; sourceTree = "<group>"; };
 		7855E0DF153FEF240059DD9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
+		8C3CE3C518C2E39F00F753BB /* 360x540.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 360x540.png; sourceTree = "<group>"; };
+		8C3CE3C618C2E39F00F753BB /* 720x1080.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 720x1080.png; sourceTree = "<group>"; };
 		8C985C7118BC7EF900C99995 /* BackNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackNormal.png; sourceTree = "<group>"; };
 		8C985C7218BC7EF900C99995 /* BackSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackSelected.png; sourceTree = "<group>"; };
 		8C985C7318BC7EF900C99995 /* StartNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StartNormal.png; sourceTree = "<group>"; };
@@ -1769,6 +1773,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8C3CE3C518C2E39F00F753BB /* 360x540.png */,
+				8C3CE3C618C2E39F00F753BB /* 720x1080.png */,
 				8C985C7118BC7EF900C99995 /* BackNormal.png */,
 				8C985C7218BC7EF900C99995 /* BackSelected.png */,
 				8C985C7318BC7EF900C99995 /* StartNormal.png */,
@@ -1897,6 +1903,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C3CE3C718C2E39F00F753BB /* 360x540.png in Resources */,
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
 				8CD73A4718BC1BE5002D9D08 /* Player.png in Resources */,
@@ -1924,6 +1931,7 @@
 				8CD73A4E18BC1BE5002D9D08 /* Player.png in Resources */,
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
 				8CD73A4418BC1BE5002D9D08 /* Marker Felt.ttf in Resources */,
+				8C3CE3C818C2E39F00F753BB /* 720x1080.png in Resources */,
 				379BB9CC17F03F3700829B88 /* json_internalarray.inl in Resources */,
 				8C985C7518BC7EF900C99995 /* BackNormal.png in Resources */,
 				8C985C7818BC7EF900C99995 /* StartSelected.png in Resources */,
